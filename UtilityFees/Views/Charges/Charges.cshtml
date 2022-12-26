@@ -1,0 +1,65 @@
+﻿@model UtilityFeesApp.BusinessLogic.ViewModels.FullChargeViewModel
+<h2>Начисления за коммунальные услуги</h2>
+@if (Model.ElectricityCharge != 0)
+{
+    <div>
+        
+        <h4>Электроэнергия
+        @Math.Round(Model.ElectricityCharge, 2) руб.
+</h4>
+    </div>
+}
+@if (Model.ColdWaterCharge != 0)
+{
+    <div>
+        <h4>
+        Холодое водоснабжение
+        @Math.Round(Model.ColdWaterCharge, 2) руб.
+        </h4>
+    </div>
+}
+@if (Model.DailyElectricityCharge != 0)
+{
+    <div>
+        <h4>
+        Электроэнергия за дни
+        @Math.Round(Model.DailyElectricityCharge, 2) руб.
+        </h4>
+    </div>
+}
+@if (Model.NightElectricityCharge != 0)
+{
+    <div>
+        <h4>
+        Электроэнергия за ночи
+        @Math.Round(Model.NightElectricityCharge, 2) руб.
+        </h4>
+    </div>
+}
+@if (Model.HeatCarrierCharge != 0)
+{
+    <div>
+        <h4>
+        ГВС Теплоноситель
+        @Math.Round(Model.HeatCarrierCharge, 2) руб.
+        </h4>
+    </div>
+}
+@if (Model.HeatEnergyCharge != 0)
+{
+    <div>
+        <h4>
+        ГВС Тепловая энергия
+        @Math.Round(Model.HeatEnergyCharge) руб.
+        </h4>
+    </div>
+}
+@if (Model.FullPayment != 0)
+{
+    <div>
+        <h3>
+        Всего
+        @Math.Round(Model.FullPayment, 2) руб.
+        </h3>
+    </div>
+}

@@ -1,0 +1,25 @@
+﻿@model UtilityFeesApp.BusinessLogic.ViewModels.UserOptionsViewModel
+
+<h2>Параметры пользователя</h2>
+
+<form method="post" asp-controller="UserOptions" asp-action="UserOptions">
+    <div>
+        <label>Количество жильцов</label><br />
+        <input asp-for="NumberOfResidents" min="1" max = "99" required="required"/>
+    </div>
+    <div>
+        <label>Наличие счётчика электроэнергии</label><br />
+        <input asp-for="HasPSDevice"/>
+    </div>
+    <div>
+        <label>Наличие счётчика холодной воды</label><br />
+        <input asp-for="HasCWSDevice"/>
+    </div>
+    <div>
+        <label>Наличие счётчика горячей воды</label><br />
+        <input asp-for="HasHWSDevice"/>
+    </div>
+    <div>
+        <input type="submit" value="Ок"/>
+    </div>
+</form>

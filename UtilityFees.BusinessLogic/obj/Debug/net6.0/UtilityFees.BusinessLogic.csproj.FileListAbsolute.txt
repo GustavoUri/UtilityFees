@@ -1,0 +1,15 @@
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\bin\Debug\net6.0\UtilityFees.BusinessLogic.deps.json
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\bin\Debug\net6.0\UtilityFees.BusinessLogic.dll
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\bin\Debug\net6.0\UtilityFees.BusinessLogic.pdb
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\bin\Debug\net6.0\UtilityFees.Data.dll
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\bin\Debug\net6.0\UtilityFees.Data.pdb
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\obj\Debug\net6.0\UtilityFees.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\obj\Debug\net6.0\UtilityFees.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\obj\Debug\net6.0\UtilityFees.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\obj\Debug\net6.0\UtilityFees.BusinessLogic.AssemblyInfo.cs
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\obj\Debug\net6.0\UtilityFees.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\obj\Debug\net6.0\UtilityFees.BusinessLogic.csproj.CopyComplete
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\obj\Debug\net6.0\UtilityFees.BusinessLogic.dll
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\obj\Debug\net6.0\refint\UtilityFees.BusinessLogic.dll
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\obj\Debug\net6.0\UtilityFees.BusinessLogic.pdb
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.BusinessLogic\obj\Debug\net6.0\ref\UtilityFees.BusinessLogic.dll

@@ -1,0 +1,12 @@
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\bin\Debug\net6.0\UtilityFees.Data.deps.json
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\bin\Debug\net6.0\UtilityFees.Data.dll
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\bin\Debug\net6.0\UtilityFees.Data.pdb
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\obj\Debug\net6.0\UtilityFees.Data.csproj.AssemblyReference.cache
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\obj\Debug\net6.0\UtilityFees.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\obj\Debug\net6.0\UtilityFees.Data.AssemblyInfoInputs.cache
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\obj\Debug\net6.0\UtilityFees.Data.AssemblyInfo.cs
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\obj\Debug\net6.0\UtilityFees.Data.csproj.CoreCompileInputs.cache
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\obj\Debug\net6.0\UtilityFees.Data.dll
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\obj\Debug\net6.0\refint\UtilityFees.Data.dll
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\obj\Debug\net6.0\UtilityFees.Data.pdb
+C:\Users\amine\RiderProjects\UtilityFees\UtilityFees.Data\obj\Debug\net6.0\ref\UtilityFees.Data.dll
