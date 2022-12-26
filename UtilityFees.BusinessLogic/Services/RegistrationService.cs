@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using UtilityFeesApp.BusinessLogic.Interfaces;
-using UtilityFeesApp.BusinessLogic.ViewModels;
-using UtilityFeesAppData.Entities;
-using UtilityFeesAppData.Interfaces;
+using UtilityFees.BusinessLogic.Interfaces;
+using UtilityFees.BusinessLogic.ViewModels;
+using UtilityFees.Data.Entities;
 
-namespace UtilityFeesApp.BusinessLogic.Services;
+namespace UtilityFees.BusinessLogic.Services;
 
 public class RegistrationService : IRegistrationService
 {
@@ -25,6 +23,5 @@ public class RegistrationService : IRegistrationService
         if (!result.Succeeded) return false;
         await _signInManager.SignInAsync(user, false);
         return true;
-
     }
 }

@@ -7,10 +7,12 @@ public class HeatEnergyService : IHESupplyService
     private const double Standard = 0.05349;
     private const double Rate = 998.69;
     private readonly IHCSupplyService _heatCarrService;
+
     public HeatEnergyService(IHCSupplyService heatCarrService)
     {
         _heatCarrService = heatCarrService;
     }
+
     public double CalcCharge(double indications, double pastIndications)
     {
         var volume = CalcVolume(indications, pastIndications);

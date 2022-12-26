@@ -1,30 +1,31 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using UtilityFeesApp.BusinessLogic.Interfaces;
-using UtilityFeesApp.BusinessLogic.ViewModels;
+using UtilityFees.BusinessLogic.Interfaces;
+using UtilityFees.BusinessLogic.ViewModels;
 
-namespace Web.Controllers;
+namespace UtilityFees.Controllers;
 
 public class AccountController : Controller
 {
     private readonly IRegistrationService _registrationService;
     private readonly IAuthenticationService _authenticationService;
+
     public AccountController(IRegistrationService registrationService, IAuthenticationService authenticationService)
     {
         _registrationService = registrationService;
         _authenticationService = authenticationService;
     }
-    // GET
+
     public IActionResult Register()
     {
         return View();
     }
-    
+
     [HttpGet]
     public IActionResult Login()
     {
         return View();
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> Register(RegisterViewModel model)
     {
@@ -33,18 +34,18 @@ public class AccountController : Controller
             var result = await _registrationService.RegisterAsync(model);
             if (!result)
                 return View(model);
-            
         }
+
         return RedirectToAction("UserOptions", "UserOptions");
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> Login(LoginViewModel model)
     {
         await _authenticationService.LoginAsync(model);
         return RedirectToAction("UserMeasurements", "Measurements");
     }
-    
+
     [HttpGet]
     public async Task<IActionResult> Logout()
     {

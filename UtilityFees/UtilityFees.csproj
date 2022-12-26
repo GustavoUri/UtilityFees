@@ -20,6 +20,8 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Pages\Charges\UserCharges.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
     </ItemGroup>
 
 </Project>

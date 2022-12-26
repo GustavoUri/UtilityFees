@@ -1,9 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using UtilityFees.Data.AppEFContext;
-using UtilityFeesAppData.Entities;
-using UtilityFeesAppData.Interfaces;
+﻿using UtilityFees.Data.AppEFContext;
+using UtilityFees.Data.Entities;
+using UtilityFees.Data.Interfaces;
 
-namespace UtilityFeesAppData.Repositories;
+namespace UtilityFees.Data.Repositories;
 
 public class UserRepository : IRepository<User>
 {

@@ -1,22 +1,19 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using UtilityFees.BusinessLogic.Interfaces;
-using UtilityFeesApp.BusinessLogic.ViewModels;
-using UtilityFeesAppData.Entities;
+using UtilityFees.BusinessLogic.ViewModels;
+using UtilityFees.Data.Entities;
 
 namespace UtilityFees.Controllers;
 
 public class MeasurementsController : Controller
 {
     private readonly UserManager<User> _userManager;
-    private readonly IMeasurementService _measService;
-    public MeasurementsController(UserManager<User> userManager, IMeasurementService measService)
+
+    public MeasurementsController(UserManager<User> userManager)
     {
         _userManager = userManager;
-        _measService = measService;
     }
-    //[Authorize]
+
     public async Task<IActionResult> UserMeasurements()
     {
         if (!User.Identity.IsAuthenticated)
@@ -30,17 +27,4 @@ public class MeasurementsController : Controller
         };
         return View();
     }
-
-    [HttpPost]
-    public async Task<IActionResult> GetMeasurements(MeasurementViewModel model)
-    {
-        if (!User.Identity.IsAuthenticated)
-            return Redirect("~/Account/Login");
-        var user = await _userManager.FindByNameAsync(User.Identity?.Name);
-        _measService.AddMeasurement(user.Id, model);
-        return RedirectToAction("Index", "Home");
-        
-    }
-    
-    
 }

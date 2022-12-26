@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using UtilityFeesApp.BusinessLogic.Interfaces;
-using UtilityFeesApp.BusinessLogic.ViewModels;
-using UtilityFeesAppData.Entities;
+using UtilityFees.BusinessLogic.Interfaces;
+using UtilityFees.BusinessLogic.ViewModels;
+using UtilityFees.Data.Entities;
 
 namespace UtilityFees.BusinessLogic.Services;
 
 public class AuthenticationService : IAuthenticationService
 {
     private readonly SignInManager<User> _signInManager;
+
     public AuthenticationService(SignInManager<User> signInManager)
     {
         _signInManager = signInManager;
@@ -24,4 +25,3 @@ public class AuthenticationService : IAuthenticationService
         await _signInManager.SignOutAsync();
     }
 }
-    

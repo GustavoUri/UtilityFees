@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace UtilityFeesApp.BusinessLogic.ViewModels;
+namespace UtilityFees.BusinessLogic.ViewModels;
 
 public class LoginViewModel
 {

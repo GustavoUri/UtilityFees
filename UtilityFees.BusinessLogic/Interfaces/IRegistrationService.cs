@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
-using UtilityFeesApp.BusinessLogic.ViewModels;
+﻿using UtilityFees.BusinessLogic.ViewModels;
 
-namespace UtilityFeesApp.BusinessLogic.Interfaces;
+namespace UtilityFees.BusinessLogic.Interfaces;
 
 public interface IRegistrationService
 {

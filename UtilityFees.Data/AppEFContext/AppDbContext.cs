@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using UtilityFeesAppData.Entities;
+using UtilityFees.Data.Entities;
 
 namespace UtilityFees.Data.AppEFContext;
 
@@ -15,6 +15,6 @@ public class AppDbContext : IdentityDbContext<User>
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=123");
+        optionsBuilder.UseSqlite("Data Source=db.db");
     }
 }

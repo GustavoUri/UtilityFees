@@ -16,13 +16,13 @@ public class ElectricitySupplyService : IElectricitySupplyService
         return charge;
     }
 
-    public double CountVolume(int numOfResidents)
+    private double CountVolume(int numOfResidents)
     {
         var volume = numOfResidents * Standard;
         return volume;
     }
 
-    public double CountVolume(double indications, double pastIndications)
+    private double CountVolume(double indications, double pastIndications)
     {
         var volume = indications - pastIndications;
         return volume;

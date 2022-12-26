@@ -1,8 +1,7 @@
 ﻿using UtilityFees.BusinessLogic.Interfaces;
-using UtilityFeesApp.BusinessLogic.ViewModels;
-using UtilityFeesAppData.Entities;
-using UtilityFeesAppData.Interfaces;
-using UtilityFeesAppData.Repositories;
+using UtilityFees.BusinessLogic.ViewModels;
+using UtilityFees.Data.Entities;
+using UtilityFees.Data.Interfaces;
 
 namespace UtilityFees.BusinessLogic.Services;
 
@@ -17,16 +16,6 @@ public class MeasurementService : IMeasurementService
         _measRep = measRep;
     }
 
-    public MeasurementViewModel GetMeasurement(string userId, int month)
-    {
-        var user = _userRep.GetById(userId);
-        var measurement = user.Measurements.FirstOrDefault(meas => meas.MeasurementMonth == month);
-        var measModel = new MeasurementViewModel()
-        {
-
-        };
-        return measModel;
-    }
 
     public void AddMeasurement(string userId, MeasurementViewModel measurement)
     {

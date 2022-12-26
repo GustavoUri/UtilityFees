@@ -1,7 +1,7 @@
 ﻿using UtilityFees.BusinessLogic.Interfaces;
-using UtilityFeesApp.BusinessLogic.ViewModels;
-using UtilityFeesAppData.Entities;
-using UtilityFeesAppData.Interfaces;
+using UtilityFees.BusinessLogic.ViewModels;
+using UtilityFees.Data.Entities;
+using UtilityFees.Data.Interfaces;
 
 namespace UtilityFees.BusinessLogic.Services;
 
@@ -12,15 +12,13 @@ public class FullChargeService : IFullChargeService
     private readonly ICWSupplyService _coldWaterService;
     private readonly IHCSupplyService _heatCarrierService;
     private readonly IHESupplyService _heatEnergyService;
-    private readonly IMeasurementService _measService;
     private readonly IElectricitySupplyService _electrSupplyService;
 
     public FullChargeService(ICWSupplyService coldWaterService,
         IHCSupplyService heatCarrierService, IHESupplyService heatEnergyService,
-        IMeasurementService measService, IElectricitySupplyService electrSupplyService,
+        IElectricitySupplyService electrSupplyService,
         IRepository<FullMeasurement> measRep, IRepository<User> userRep)
     {
-        _measService = measService;
         _coldWaterService = coldWaterService;
         _electrSupplyService = electrSupplyService;
         _heatCarrierService = heatCarrierService;
@@ -43,32 +41,37 @@ public class FullChargeService : IFullChargeService
         return pastMeas;
     }
 
+    private void GetElectrAmount(FullChargeViewModel model, MeasurementViewModel meas, int numOfRes,
+        FullMeasurement pastMeas)
+    {
+        if (meas.DailyElectricityAmount != 0 && meas.NightElectricityAmount != 0)
+        {
+            model.DailyElectricityCharge = _electrSupplyService.CountChargeForDays(
+                meas.DailyElectricityAmount,
+                pastMeas.DailyElectricityAmount);
+
+            model.NightElectricityCharge = _electrSupplyService.CountChargeForNights(
+                meas.NightElectricityAmount,
+                pastMeas.NightElectricityAmount);
+            model.FullPayment += model.DailyElectricityCharge;
+            model.FullPayment += model.NightElectricityCharge;
+        }
+        else
+        {
+            model.ElectricityCharge = _electrSupplyService.CountCharge(numOfRes);
+            model.FullPayment += model.ElectricityCharge;
+        }
+    }
+
     public FullChargeViewModel CalcCharge(MeasurementViewModel measurement, string userId)
     {
-        
         var user = _userRep.GetById(userId);
         var pastMeas = GetPastMeas(userId, measurement.MeasurementMonth);
         var fullCharge = new FullChargeViewModel
         {
             FullPayment = 0
         };
-        if (measurement.DailyElectricityAmount != 0 && measurement.NightElectricityAmount != 0)
-        {
-            fullCharge.DailyElectricityCharge = _electrSupplyService.CountChargeForDays(
-                measurement.DailyElectricityAmount,
-                pastMeas.DailyElectricityAmount);
-
-            fullCharge.NightElectricityCharge = _electrSupplyService.CountChargeForNights(
-                measurement.NightElectricityAmount,
-                pastMeas.NightElectricityAmount);
-            fullCharge.FullPayment += fullCharge.DailyElectricityCharge;
-            fullCharge.FullPayment += fullCharge.NightElectricityCharge;
-        }
-        else
-        {
-            fullCharge.ElectricityCharge = _electrSupplyService.CountCharge(user.NumberOfResidents);
-            fullCharge.FullPayment += fullCharge.ElectricityCharge;
-        }
+        GetElectrAmount(fullCharge, measurement, user.NumberOfResidents, pastMeas);
 
         if (measurement.HotWaterAmount != 0)
         {
@@ -82,6 +85,7 @@ public class FullChargeService : IFullChargeService
             fullCharge.HeatCarrierCharge = _heatCarrierService.CalcCharge(user.NumberOfResidents);
             fullCharge.HeatEnergyCharge = _heatEnergyService.CalcCharge(user.NumberOfResidents);
         }
+
         fullCharge.FullPayment += fullCharge.HeatCarrierCharge;
         fullCharge.FullPayment += fullCharge.HeatEnergyCharge;
         if (measurement.ColdWaterAmount != 0)
@@ -93,6 +97,7 @@ public class FullChargeService : IFullChargeService
         {
             fullCharge.ColdWaterCharge = _coldWaterService.CalcCharge(user.NumberOfResidents);
         }
+
         fullCharge.FullPayment += fullCharge.ColdWaterCharge;
 
         return fullCharge;

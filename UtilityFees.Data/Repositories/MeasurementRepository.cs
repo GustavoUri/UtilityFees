@@ -1,8 +1,8 @@
 ﻿using UtilityFees.Data.AppEFContext;
-using UtilityFeesAppData.Entities;
-using UtilityFeesAppData.Interfaces;
+using UtilityFees.Data.Entities;
+using UtilityFees.Data.Interfaces;
 
-namespace UtilityFeesAppData.Repositories;
+namespace UtilityFees.Data.Repositories;
 
 public class MeasurementRepository : IRepository<FullMeasurement>
 {

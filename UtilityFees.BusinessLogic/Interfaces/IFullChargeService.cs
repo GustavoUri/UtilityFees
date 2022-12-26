@@ -1,4 +1,4 @@
-﻿using UtilityFeesApp.BusinessLogic.ViewModels;
+﻿using UtilityFees.BusinessLogic.ViewModels;
 
 namespace UtilityFees.BusinessLogic.Interfaces;
 

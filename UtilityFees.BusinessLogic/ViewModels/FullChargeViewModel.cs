@@ -1,4 +1,4 @@
-﻿namespace UtilityFeesApp.BusinessLogic.ViewModels;
+﻿namespace UtilityFees.BusinessLogic.ViewModels;
 
 public class FullChargeViewModel
 {

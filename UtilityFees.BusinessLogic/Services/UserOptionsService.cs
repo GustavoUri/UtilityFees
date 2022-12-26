@@ -1,7 +1,7 @@
-﻿using UtilityFeesApp.BusinessLogic.Interfaces;
-using UtilityFeesApp.BusinessLogic.ViewModels;
-using UtilityFeesAppData.Entities;
-using UtilityFeesAppData.Interfaces;
+﻿using UtilityFees.BusinessLogic.Interfaces;
+using UtilityFees.BusinessLogic.ViewModels;
+using UtilityFees.Data.Entities;
+using UtilityFees.Data.Interfaces;
 
 namespace UtilityFees.BusinessLogic.Services;
 

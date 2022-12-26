@@ -1,26 +1,25 @@
-﻿
-@model UtilityFeesApp.BusinessLogic.ViewModels.MeasurementViewModel
+﻿@model UtilityFees.BusinessLogic.ViewModels.MeasurementViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
 <h2>Расчёт услуг</h2>
 <form method="post" asp-controller="Charges" asp-action="Charges">
     <div>
-    <select asp-for="MeasurementMonth" required="required">
-        <option value="" selected disabled hidden>Выберите месяц</option>
-        <option value="1">Январь</option>
-        <option value="2">Февраль</option>
-        <option value="3">Март</option>
-        <option value="4">Апрель</option>
-        <option value="5">Май</option>
-        <option value="6">Июнь</option>
-        <option value="7">Июль</option>
-        <option value="8">Август</option>
-        <option value="9">Сентябрь</option>
-        <option value="10">Октябрь</option>
-        <option value="11">Ноябрь</option>
-        <option value="12">Декабрь</option>
-    </select>
+        <select asp-for="MeasurementMonth" required="required">
+            <option value="" selected disabled hidden>Выберите месяц</option>
+            <option value="1">Январь</option>
+            <option value="2">Февраль</option>
+            <option value="3">Март</option>
+            <option value="4">Апрель</option>
+            <option value="5">Май</option>
+            <option value="6">Июнь</option>
+            <option value="7">Июль</option>
+            <option value="8">Август</option>
+            <option value="9">Сентябрь</option>
+            <option value="10">Октябрь</option>
+            <option value="11">Ноябрь</option>
+            <option value="12">Декабрь</option>
+        </select>
     </div>
     @if ((bool) ViewBag.Options.HasPSDevice)
     {
